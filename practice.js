@@ -30,7 +30,7 @@
 
 const first = function(array, callback){
   return callback(array[0]);
-}
+};
 
 // Do not edit the code below.
 const names = ['Tyler', 'Cahlan', 'Ryan', 'Colt', 'Tyler', 'Blaine', 'Cahlan'];
@@ -52,7 +52,7 @@ first(names, function (firstName) {
 
 const last = function(array, callback){
   return callback(array[array.length -1]);
-}
+};
 
 // Do not edit the code below.
 // Your function is called here
@@ -71,7 +71,7 @@ last(names, (lastName) => {
 
 const multiply = function(num1, num2, callback){
   return callback(num1 * num2)
-}
+};
 
 // Do not edit the code below.
 // Your function is called here
@@ -89,7 +89,12 @@ multiply(4, 3, function (answer) {
   If the name does not exist, invoke the callback with false as the argument.
 */
 
-//Code Here
+const contains = function (array, name, callback) {
+  if (array.includes(name)) {
+    return callback(true);
+  } 
+  return callback(false);
+};
 
 // Do not edit the code below.
 // Your function is called here
@@ -109,7 +114,11 @@ contains(names, 'Colt', (result) => {
   For each name in the array, invoke the callback and pass in the name and the name's index as arguments.
 */
 
-//Code Here
+const each = function(namesArray, callback){
+  for (let i = 0; i < namesArray.length; i++) {
+    callback(namesArray[i], i)
+  }
+}
 
 // Do not edit the code below.
 // Your function is called here
@@ -126,7 +135,14 @@ each(names, (item, index) => {
   When the correct user object is found, invoke the callback with the user object as an argument.
 */
 
-// Code here
+function getUserById (users, id, callback){
+  for (const user of users){
+    if (user.id === id) {
+      callback(user);
+      break;
+    }
+  }
+}
 
 // Do not edit the code below.
 const users = [
