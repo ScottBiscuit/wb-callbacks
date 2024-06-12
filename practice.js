@@ -225,7 +225,7 @@ const formalGreeting = (names) => {
 // Remember that by default, JavaScript sorts by converting all items to strings. So you
 // will need to provide a compare function.
 
-// REPLACE THIS WITH YOUR CODE
+const sortNumbers = (numbers) => numbers.sort((num1, num2) => num1 - num2)
 
 /// /////// PROBLEM 11 //////////
 
@@ -245,7 +245,10 @@ const employees = [
 ];
 // Do not edit the code above.
 
-// REPLACE THIS WITH YOUR CODE
+const findProgrammer = (emps) => {
+  const programmers = emps.filter((emp) => emp.job === 'programmer');
+  return programmers[0];
+};
 
 ////////// PROBLEM 12 //////////
 
@@ -272,7 +275,7 @@ const orders = [
   Example: if tax is 0.07, the price afterTax could be calculated like this: afterTax = price * 1.07)
 */
 
-let orderTotals; // Code here
+let orderTotals = orders.map((order) => order.price * (1 + order.tax));
 
 /// /////// PROBLEM 13 //////////
 
@@ -288,7 +291,9 @@ const exampleMenuItems = [
 // Create a function called sortMenuItems which takes in an array of objects like the one above
 // and sorts the array by price from smallest to largest. It should return the sorted array.
 
-// REPLACE THIS WITH YOUR CODE
+const sortMenuItems = (menuItems) => {
+  return menuItems.sort((item1, item2) => item1.price - item2.price);
+};
 
 /// /////// PROBLEM 14 //////////
 
@@ -298,4 +303,6 @@ const exampleMenuItems = [
 //
 // Make sure to use arrow functions combined with the reduce method.
 
-// REPLACE THIS WITH YOUR CODE
+const productOfArray = (numbers) => {
+  return numbers.reduce((acc, curr) => acc * curr);
+}
